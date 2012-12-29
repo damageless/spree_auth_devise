@@ -14,11 +14,8 @@ class Spree::UsersController < Spree::BaseController
       if current_order
         session[:guest_token] = nil
       end
-
-      redirect_back_or_default(root_url)
-    else
-      render :new
     end
+    redirect_back_or_default(:back)
   end
 
   def update
